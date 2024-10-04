@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ApiMonitoringService.Models.ResponseLog>
+
+@{
+    ViewData["Title"] = "Response Logs";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Request Log Id</th>
+            <th>Status Code</th>
+            <th>Response Payload</th>
+            <th>Response Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr>
+                <td>@log.Id</td>
+                <td>@log.RequestLogId</td>
+                <td>@log.StatusCode</td>
+                <td>@log.ResponsePayload</td>
+                <td>@log.ResponseTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
